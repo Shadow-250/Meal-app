@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/categories_item.dart';
 
 import './dummy_data.dart';
-import './models/category.dart';
 
 
 class CategoriesScreen extends StatelessWidget {
