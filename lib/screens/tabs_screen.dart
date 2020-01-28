@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/main_drawer.dart';
 import './favorites-screen.dart';
 import './categories_screen.dart';
 
@@ -29,8 +30,9 @@ class _TabsSceenState extends State<TabsSceen> {
       // initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Meals'),
+          title: Text('Categories'),
         ),
+        drawer: MainDrawer(),
         body: _page[_selectedPageIndex]['page'],
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index) => _selectpage(index),
