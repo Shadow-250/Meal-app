@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/main_drawer.dart';
+// import '../widgets/main_drawer.dart';
 
 class FilterScreen extends StatefulWidget {
   static const routeName = '/filters';
@@ -8,10 +8,10 @@ class FilterScreen extends StatefulWidget {
 }
 
 class _FilterScreenState extends State<FilterScreen> {
-  var _glutenFree = false;
-  var _vegetarian = false;
-  var _vegan = false;
-  var _lactoseFree = false;
+  bool _glutenFree = false;
+  bool _vegetarian = false;
+  bool _vegan = false;
+  bool _lactoseFree = false;
 
   Widget _buildSwitchListTile(
     String title, 
@@ -21,7 +21,7 @@ class _FilterScreenState extends State<FilterScreen> {
   ){
     return SwitchListTile(
       title: Text(title),
-      value: _glutenFree,
+      value: currentValue,
       subtitle: Text(
         description,
       ),
@@ -53,7 +53,8 @@ class _FilterScreenState extends State<FilterScreen> {
                   'Only include gluten-free meals', 
                   _glutenFree,
                   (newValue) {
-                    setState(() {
+                    setState(
+                    () {
                       _glutenFree = newValue;
                     });
                   } 
@@ -63,7 +64,8 @@ class _FilterScreenState extends State<FilterScreen> {
                   'Only include Lactose-free meals', 
                   _lactoseFree,
                   (newValue) {
-                    setState(() {
+                    setState(
+                    () {
                       _lactoseFree = newValue;
                     });
                   } 
@@ -71,9 +73,10 @@ class _FilterScreenState extends State<FilterScreen> {
                 _buildSwitchListTile(
                   'Vegetarian', 
                   'Only include Vegetarian meals', 
-                  _glutenFree,
+                  _vegetarian,
                   (newValue) {
-                    setState(() {
+                    setState(
+                    () {
                       _vegetarian = newValue;
                     });
                   } 
@@ -81,9 +84,10 @@ class _FilterScreenState extends State<FilterScreen> {
                 _buildSwitchListTile(
                   'Vegan', 
                   'Only include Vegan meals', 
-                  _glutenFree,
+                  _vegan,
                   (newValue) {
-                    setState(() {
+                    setState(
+                    () {
                       _vegan = newValue;
                     });
                   } 
